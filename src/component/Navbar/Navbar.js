@@ -1,12 +1,20 @@
 import React from 'react';
 
-export default (Navbar = props => {
-  return <header>
-    <nav>
-      <h1>MockStreamer</h1>
-      <div>
-        
+const Navbar = props => {
+  return (
+    <nav class="blue darken-2 navbar-fixed">
+      <div className="nav-wrapper">
+        <div className="container">
+          <a className="brand-logo left">MOCKSTREAMER</a>
+          <ul className="right">
+            <li>
+              <a class="waves-effect waves-light btn red">LOGIN</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
-  </header>;
-});
+  );
+};
+
+export default Navbar;
