@@ -7,7 +7,7 @@ export default class NavBar extends Component {
     this.myRef = React.createRef();
   }
   handleClick = () => {
-    console.log(this.myRef.current.dropdown());
+    //console.log(this.myRef.current.dropdown());
     //this.myRef.current;
   };
   render() {
@@ -21,7 +21,7 @@ export default class NavBar extends Component {
                 {/* Social Media Dropdown Button */}
                 <li>
                   <a
-                    class="dropdown-trigger"
+                    class="dropdown-"
                     href="#!"
                     data-target="social"
                     ref={this.myRef}
@@ -44,10 +44,7 @@ export default class NavBar extends Component {
                   </li>
                 </ul>
                 {/* Login Button */}
-
-                <Button variant="contained" color="primary">
-                  LOGIN
-                </Button>
+                <a class="waves-effect waves-light btn red">LOGIN</a>
               </li>
             </ul>
           </div>
