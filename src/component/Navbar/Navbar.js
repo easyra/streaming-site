@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import firebaseui from 'firebaseui';
+import firebase from '../../firebase';
 import Button from '@material-ui/core/Button';
 
 export default class NavBar extends Component {
