@@ -2,17 +2,25 @@ import React, { Component } from 'react';
 import firebaseui from 'firebaseui';
 import firebase from '../../firebase';
 import Button from '@material-ui/core/Button';
+import Login from '../Login/Login';
+import uiConfig from '../Login/firebaseUiConfig';
+
+const ui = new firebaseui.auth.AuthUI(firebase.auth());
+ui.start('#firebaseui-auth-container', uiConfig);
 
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLoggingIn: false,
+    };
     this.myRef = React.createRef();
   }
   handleClick = () => {
-    //console.log(this.myRef.current.dropdown());
+    console.log(this.myRef.current.dropdown());
     //this.myRef.current;
   };
-  render() {
+  render() { 
     return (
       <nav class="blue darken-2 navbar-fixed">
         <div className="nav-wrapper">
@@ -46,7 +54,17 @@ export default class NavBar extends Component {
                   </li>
                 </ul>
                 {/* Login Button */}
-                <a class="waves-effect waves-light btn red">LOGIN</a>
+                <a
+                  class="waves-effect waves-light btn red"
+                  onClick={() =>
+                    this.setState(prevState => {
+                      return { isLoggingIn: !prevState.isLoggingIn };
+                    })
+                  }
+                >
+                  LOGIN
+                </a>
+                {this.state.isLoggingIn && <Login />}
               </li>
             </ul>
           </div>
