@@ -8,6 +8,31 @@ const Navbar = props => {
           <a className="brand-logo left">MOCKSTREAMER</a>
           <ul className="right">
             <li>
+              {/* Social Media Dropdown Button */}
+              <li>
+                <a
+                  class="dropdown-trigger"
+                  href="#!"
+                  data-target="social"
+                  onClick={handleClick}
+                >
+                  Follow Me<i class="material-icons right">arrow_drop_down</i>
+                </a>
+              </li>
+              {/* Dropdown Content */}
+              <ul id="social" class="dropdown-content">
+                <li>
+                  <a href="#!">one</a>
+                </li>
+                <li>
+                  <a href="#!">two</a>
+                </li>
+                <li class="divider" />
+                <li>
+                  <a href="#!">three</a>
+                </li>
+              </ul>
+              {/* Login Button */}
               <a class="waves-effect waves-light btn red">LOGIN</a>
             </li>
           </ul>
@@ -15,6 +40,11 @@ const Navbar = props => {
       </div>
     </nav>
   );
+};
+
+const handleClick = event => {
+  console.log('hi');
+  event.currentTarget.open();
 };
 
 export default Navbar;
